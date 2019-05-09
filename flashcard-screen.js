@@ -10,12 +10,18 @@
 class FlashcardScreen {
   constructor(containerElement) {
     this.containerElement = containerElement;
+
   }
 
-  show() {
+  show(stage,isContinue) {
     this.containerElement.classList.remove('inactive');
     const flashcardContainer = document.querySelector('#flashcard-container');
-    const card = new Flashcard(flashcardContainer, 'word', 'definition');
+    if(isContinue===true){
+      this.card.wsptr=0;
+    }
+    else {
+      this.card = new Flashcard(flashcardContainer, stage);
+    }
   }
 
   hide() {
