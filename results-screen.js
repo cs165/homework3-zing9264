@@ -32,7 +32,7 @@ class ResultsScreen {
         let correct = this.containerElement.querySelector('.correct');
         let incorrect = this.containerElement.querySelector('.incorrect');
 
-        percent.textContent = numberCorrect / (numberWrong + numberCorrect) * 100;
+        percent.textContent = Math.round(numberCorrect / (numberWrong + numberCorrect) * 100);
         correct.textContent = numberCorrect;
         incorrect.textContent = numberWrong;
 
